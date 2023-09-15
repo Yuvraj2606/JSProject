@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Taking App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/design.css">
+    <script type="module" src="./scripts/controllers/notes-controller.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="alert alert-info text-center">Notes Taking App</h1>
+        <div class="form-group">
+            <label>Id</label>
+            <input id="id" class="form-control" type="text" placeholder="Type id here..">
+        </div>
+        <div class="form-group">
+            <label>Title</label>
+            <input id="title" class="form-control" type="text" placeholder="Type Title here..">
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea id="desc" class="form-control" rows="5" cols="20" placeholder="Type description here.."></textarea>
+        </div>
+        <div class="form-group">
+            <label>Completion Date</label>
+            <input id="cdate" class="form-control" type="date"/>
+        </div>
+        <div class="form-group">
+            <label>Importance</label>
+            <input id="imp" class="form-control" type="color"/>
+        </div>
+        <div>
+            <button id="add" class="btn btn-info">Add</button>
+            <button id="delete" class="btn btn-danger">Delete</button>
+            <button id="search" class="btn btn-success">Search</button>
+            <button id="show" class="btn btn-dark">Show All</button>
+            <button id="update" class="btn btn-warning">Update</button>
+            <button id="saveLocal" class="btn btn-success">Save</button>
+            <button id="loadLocal" class="btn btn-secondary">Load</button>
+            <button id="clearAll" class="btn btn-danger">Clear All</button>
+            <button class="btn btn-primary">Save To Server</button>
+            <button class="btn btn-dark">Load From Server</button>
+            <div id="searchWhat" class="mt-2"></div>
+        </div>
+
+        <div>
+            <h3>Total Records: <span id="total"></span> Mark Records: <span id="mark"></span> UnMark Records: <span id="unmark"></span> </h3>
+        </div>
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Id
+                        <i id="id-up" class="fa-solid fa-sort-up ms-2" style="color: #f5ed0f;"></i>
+                        <i id="id-down" class="fa-solid fa-sort-down ms-2" style="color: #f5ee14;"></i>
+                    </th>
+                    <th>Title
+                        <i id="title-up" class="fa-solid fa-sort-up ms-2" style="color: #f5ed0f;"></i>
+                        <i id="title-down" class="fa-solid fa-sort-down ms-2" style="color: #f5ee14;"></i>
+                    </th>
+                    <th>Description</th>
+                    <th>Completion Date
+                        <i id="cdate-up" class="fa-solid fa-sort-up ms-2" style="color: #f5ed0f;"></i>
+                        <i id="cdate-down" class="fa-solid fa-sort-down ms-2" style="color: #f5ee14;"></i>
+                    </th>
+                    <th>Importance</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody id="notes">
+                <!-- dynamic records will come here -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
